@@ -1,0 +1,15 @@
+﻿@*@model IEnumerable<WebCSharp.Models.EntityFrameWork.Product>
+@if (Model != null && Model.Any())
+{
+
+    foreach (var item in Model)
+    {
+
+        if (item.ProductSale != null)
+        {
+            @item.ProductSale.DiscountPrice
+        }
+    }
+}*@
+
+

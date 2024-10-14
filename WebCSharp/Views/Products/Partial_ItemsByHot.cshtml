@@ -1,0 +1,49 @@
+﻿
+@model IEnumerable<WebCSharp.Models.EntityFrameWork.Product>
+@if (Model != null && Model.Any())
+{
+    <div class="product_slider_container">
+        <div class="owl-carousel owl-theme product_slider">
+            @foreach (var item in Model)
+            {
+                var strImg = "";
+                var Img = item.ProductImages.FirstOrDefault(x => x.isDefault);
+                if (Img != null)
+                {
+                    strImg = Img.Image;
+                }
+                <div class="owl-item product_slider_item">
+                    <div class="product-item">
+                        <div class="product discount">
+                            <div class="product_image">
+                                <img src="@strImg" alt="@item.Slug">
+                            </div>
+                            <div class="favorite favorite_left"></div>
+                            @if (item.ProductSale != null && item.ProductSale.Any())
+                            {
+                                <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                    <span>
+                                        Sale
+                                    </span>
+                                </div>
+                            }
+                            <div class="product_info">
+                                <h6 class="product_name"><a href="/chi-tiet/@item.Slug-p@(item.Id)">@item.Name</a></h6>
+                                <div class="product_price">
+                                    @if (item.ProductSale != null && item.ProductSale.Any())
+                                    {
+                                        @item.ProductSale.FirstOrDefault().DiscountPrice
+                                        <span>@item.Price</span>
+                                    }
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+}
+

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebCSharp.Models.EntityFrameWork.Menu>
+@if (Model != null && Model.Any())
+{
+    <ul class="navbar_menu">
+        @foreach (var item in Model)
+        {
+            if (item.Link.Equals("trang-chu"))
+            {
+                item.Link = "";
+            }
+            <li>
+                <a class="nav-link" href="/@item.Link" style="text-transform:uppercase">@item.Name</a>
+            </li>
+        }
+    </ul>
+   
+}

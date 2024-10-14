@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4CB0680-D90D-4253-BB1A-DDCC2FF13963}|WebCSharp\\WebCSharp.csproj|d:\\project-cdtt\\cdtt_ngyenthuanphat\\webmvc\\webcsharp\\webcsharp\\areas\\admin\\views\\products\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4CB0680-D90D-4253-BB1A-DDCC2FF13963}|WebCSharp\\WebCSharp.csproj|solutionrelative:webcsharp\\areas\\admin\\views\\products\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4CB0680-D90D-4253-BB1A-DDCC2FF13963}|WebCSharp\\WebCSharp.csproj|D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\webcsharp\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4CB0680-D90D-4253-BB1A-DDCC2FF13963}|WebCSharp\\WebCSharp.csproj|solutionrelative:webcsharp\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4CB0680-D90D-4253-BB1A-DDCC2FF13963}|WebCSharp\\WebCSharp.csproj|D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\webcsharp\\areas\\admin\\controllers\\productimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4CB0680-D90D-4253-BB1A-DDCC2FF13963}|WebCSharp\\WebCSharp.csproj|solutionrelative:webcsharp\\areas\\admin\\controllers\\productimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4CB0680-D90D-4253-BB1A-DDCC2FF13963}|WebCSharp\\WebCSharp.csproj|D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\webcsharp\\content\\ckfinder\\config.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}",
+      "RelativeMoniker": "D:0:0:{F4CB0680-D90D-4253-BB1A-DDCC2FF13963}|WebCSharp\\WebCSharp.csproj|solutionrelative:webcsharp\\content\\ckfinder\\config.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 212,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\WebCSharp\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "WebCSharp\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\WebCSharp\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "WebCSharp\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAqwEEAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T06:40:54.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductImageController.cs",
+              "DocumentMoniker": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\WebCSharp\\Areas\\Admin\\Controllers\\ProductImageController.cs",
+              "RelativeDocumentMoniker": "WebCSharp\\Areas\\Admin\\Controllers\\ProductImageController.cs",
+              "ToolTip": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\WebCSharp\\Areas\\Admin\\Controllers\\ProductImageController.cs",
+              "RelativeToolTip": "WebCSharp\\Areas\\Admin\\Controllers\\ProductImageController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T06:40:21.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\WebCSharp\\Areas\\Admin\\Views\\Products\\Add.cshtml",
+              "RelativeDocumentMoniker": "WebCSharp\\Areas\\Admin\\Views\\Products\\Add.cshtml",
+              "ToolTip": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\WebCSharp\\Areas\\Admin\\Views\\Products\\Add.cshtml",
+              "RelativeToolTip": "WebCSharp\\Areas\\Admin\\Views\\Products\\Add.cshtml",
+              "ViewState": "AQIAAOsAAAAAAAAAAAAAACEBAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-06T16:07:55.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "config.ascx",
+              "DocumentMoniker": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\WebCSharp\\Content\\ckfinder\\config.ascx",
+              "RelativeDocumentMoniker": "WebCSharp\\Content\\ckfinder\\config.ascx",
+              "ToolTip": "D:\\PROJECT-CDTT\\CDTT_NgyenThuanPhat\\WEBMVC\\WebCSharp\\WebCSharp\\Content\\ckfinder\\config.ascx",
+              "RelativeToolTip": "WebCSharp\\Content\\ckfinder\\config.ascx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003302|",
+              "WhenOpened": "2024-10-04T08:26:58.555Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+﻿
+
+@model WebCSharp.Models.EntityFrameWork.Menu
+@{
+    ViewBag.Title = "Cập nhật Menu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Cập nhật danh mục</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Danh mục</li>
+                        <li class="breadcrumb-item active">Cập nhật danh mục</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+}
+<div class="card">
+    @using (Html.BeginForm("Edit", "Menu", FormMethod.Post, new { }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(x=>x.Id)
+
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-sm btn-danger">
+                        <i class="fa fa-trash">Xóa</i>
+                    </button>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <button type="submit" class="btn bg-success">
+                        <i class="fa-solid fa-save"></i> Lưu [Thêm]
+                    </button>
+                    <a href="/admin/menu" class="btn bg-success">
+                        <i class="fa-solid fa-arrow-left"></i> Quay về danh sách
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="mb-3">
+                        <label for="name">Tên Menu</label>
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Nhập tên danh mục" })
+                        @Html.ValidationMessageFor(x => x.Name, null, new { @class = "text-danger" })
+
+                    </div>
+                    @*<div class="mb-3">
+                            <label for="link">Đường dẫn</label>
+
+                            @Html.TextBoxFor(x => x.Link, new { @class = "form-control", @placeholder = "Đường dẫn" })
+                            @Html.ValidationMessageFor(x => x.Link, null, new { @class = "text-danger" })
+
+
+                        </div>*@
+                    <div class="mb-3">
+                        <label for="position">Vị trí</label>
+
+                        @Html.TextBoxFor(x => x.Position, new { @class = "form-control", @placeholder = "Vị trí" })
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="parent_id">Danh mục cha</label>
+                        @Html.TextBoxFor(x => x.Parent_Id, new { @class = "form-control", @value = "0" })
+                        @Html.ValidationMessageFor(x => x.Parent_Id, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="sort_order">Vị trí sắp xếp</label>
+                        @Html.TextBoxFor(x => x.Table_Id, new { @class = "form-control", @value = "0" })
+                        @Html.ValidationMessageFor(x => x.Table_Id, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="type">Hiển thị (trạng thái)</label>
+                        @Html.CheckBoxFor(x => x.Status, new { @checked = "@checked" })
+
+                    </div>
+                    @*<div class="mb-3">
+                            <label for="image">Hình ảnh</label>
+                            <input type="file" name="image" value="{{old('image')}}" id="image" class="form-control" placeholder="Thêm hình ảnh">
+
+                        </div>*@
+
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            Footer
+        </div>
+    }
+    <!-- /.card-footer-->
+</div>
+<!-- /.card -->

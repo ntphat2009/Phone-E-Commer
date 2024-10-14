@@ -1,0 +1,149 @@
+﻿
+@model WebCSharp.Models.EntityFrameWork.Brand
+
+@{
+    ViewBag.Title = "Thêm mới";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Thêm thương hiệu</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/brand">Thương hiệu</a></li>
+                        <li class="breadcrumb-item active">@ViewBag.Title</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+}
+<div class="card">
+    @using (Html.BeginForm("Add", "Brand", FormMethod.Post, new { }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false)
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-sm btn-danger">
+                        <i class="fa fa-trash">Xóa</i>
+                    </button>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <button type="submit" class="btn bg-success">
+                        <i class="fa-solid fa-save"></i> Lưu [Thêm]
+                    </button>
+                    <a href="/admin/brand" class="btn bg-success">
+                        <i class="fa-solid fa-arrow-left"></i> Quay về danh sách
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="mb-3">
+                        <label for="topic_id">Tên thương hiệu</label>
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Nhập Mã chủ đề" })
+                        @Html.ValidationMessageFor(x => x.Name, null, new { @class = "text-danger" })
+
+                    </div>
+                    <div class="mb-3">
+                        <div class="col-md-12 text-right">
+                            <div class="mb-3">
+                                <label for="exampleInputFile">File input</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        @Html.TextBoxFor(x => x.Image, new { @id = "txtImage", @class = "form-control" })
+
+                                    </div>
+                                    <div class="input-group-append">
+                                        <input type="button" value="tải ảnh" onclick="BrowseServer('txtImage');" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            @*<input type="button" class="btn btn-primary " id="iLoadImage" onclick="BrowseServer();" value="Tải ảnh" />*@
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-3">
+
+
+                    <div class="mb-3">
+                        <label for="type">Vị trí sắp xếp</label>
+                        @Html.TextBoxFor(x => x.Sort_Order, new { @class = "form-control", @value = "" })
+
+                    </div>
+                   
+                    <div class="mb-3">
+                        <label for="type">Hiển thị (trạng thái)</label>
+                        @Html.CheckBoxFor(x => x.Status)
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="metakey">Từ khóa tìm kiếm</label>
+
+                        @Html.TextBoxFor(x => x.Metakey, new { @class = "form-control", @placeholder = "metakey" })
+
+
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="metadesc">Metadesc</label>
+
+                        @Html.TextBoxFor(x => x.Metadesc, new { @class = "form-control", @placeholder = "metakey" })
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            Footer
+        </div>
+    }
+    <!-- /.card-footer-->
+</div>
+<!-- /.card -->
+@section scripts{
+        <script>
+            $(document).ready(function () {
+                CKEDITOR.replace('txtDetail', {
+                    customConfig: '/content/ckeditor/config.js',
+                    extraAllowedContent: 'span',
+                });
+            });
+            function BrowseServer(field) {
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (fileUrl) {
+                    document.getElementById(field).value = fileUrl;
+                };
+                finder.popup();
+            }
+            
+        </script>
+    }

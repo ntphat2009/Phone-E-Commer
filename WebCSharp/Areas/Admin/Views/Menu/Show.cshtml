@@ -1,0 +1,136 @@
+﻿
+
+@*@model IEnumerable<WebCSharp.Models.EntityFrameWork.Menu>*@
+@model WebCSharp.Models.EntityFrameWork.Menu
+
+@{
+    ViewBag.Title = "Cập nhật Menu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Cập nhật danh mục</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Menu</li>
+                        <li class="breadcrumb-item active">Xem chi tiết menu</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+}
+<section class="content">
+    @Html.HiddenFor(x => x.Id)
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Chi tiết Menu</h3>
+
+            <div class="card-tools">
+                <a href="/admin/menu" class="btn bg-success"><i class="fa fa-arrow-left"></i> Quay lại </a>
+            </div>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+            <div class="card-body">
+                <table class="table table-bordered border-success table-hover ">
+                    <thead class="bg-green">
+                        <tr class="fs-1">
+                            <th width="30%">
+                                Tên trường
+                            </th>
+                            <th>
+                                Giá trị
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                        
+                            <tr>
+                                <th>Id</th>
+                                <td>@Model.Id</td>
+
+
+                            </tr>
+
+                            <tr>
+                                <th>Tên Menu</th>
+                                <td>@Model.Name</td>
+                            </tr>
+                            <tr>
+                                <th>Slug</th>
+                                <td>@Model.Link</td>
+                            </tr>
+                            <tr>
+                                <th>Sắp xếp</th>
+                                <td>@Model.Position</td>
+                            </tr>
+                            <tr>
+                                <th>Mã cấp cha</th>
+                                <td>@Model.Parent_Id</td>
+                            </tr>
+                            <tr>
+                                <th>Mã bảng</th>
+                                <td>@Model.Table_Id</td>
+                            </tr>
+                            <tr>
+                                <th>Kiểu</th>
+                                <td>@Model.Type</td>
+                            </tr>
+                            <tr>
+                                <th>Ngày tạo</th>
+                                <td>@Model.Create_at</td>
+                            </tr>
+                            <tr>
+                                <th>Người tạo</th>
+                                <td>@Model.Create_By</td>
+                            </tr>
+                            <tr>
+                                <th>Ngày sửa cuối</th>
+                                <td>@Model.Update_at</td>
+                            </tr>
+                            <tr>
+                                <th>Người sửa cuối</th>
+                                <td>@Model.Update_By</td>
+                            </tr>
+                            <tr>
+                                <th>Trạng thái</th>
+                                <td>@Model.Status</td>
+                            </tr>
+                        
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            @*</div>*@
+            <!-- /.card-body -->
+            <div class="card-footer">
+                Footer
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+</section>
+<!-- /.card -->

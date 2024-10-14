@@ -1,0 +1,132 @@
+﻿
+@model WebCSharp.Models.EntityFrameWork.OrderDetail
+
+@{
+    ViewBag.Title = "Chỉnh sửa bài viết";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Chỉnh sửa danh hiệu</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/orderdetail">thương hiệu</a></li>
+                        <li class="breadcrumb-item active">@ViewBag.Title</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+}
+<div class="card">
+    @using (Html.BeginForm("Edit", "OrderDetail", FormMethod.Post, new { }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false)
+        @Html.HiddenFor(x => x.Id)
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-sm btn-danger">
+                        <i class="fa fa-trash">Xóa</i>
+                    </button>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <button type="submit" class="btn bg-success">
+                        <i class="fa-solid fa-save"></i> Lưu [Thêm]
+                    </button>
+                    <a href="/admin/orderdetail" class="btn bg-success">
+                        <i class="fa-solid fa-arrow-left"></i> Quay về danh sách
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body">
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="Product_Id">Sản phẩm</label>
+                        @Html.DropDownListFor(x => x.ProductId, ViewBag.Product as SelectList, "Chọn sản phẩm", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.ProductId, null, new { @class = "text-danger" })
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="Product_Id">Đơn hàng</label>
+                        @Html.DropDownListFor(x => x.OrderId, ViewBag.Order as SelectList, "Chọn Đơn hàng", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.OrderId, null, new { @class = "text-danger" })
+
+                    </div>
+                    <div class="col-3">
+                        <label for="Qty">Số lượng</label>
+                        @Html.TextBoxFor(x => x.Qty, new { @class = "form-control", @placeholder = "Nhập số lượng" })
+                        @Html.ValidationMessageFor(x => x.Qty, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="col-3">
+                        <label for="Amount">Amount</label>
+                        @Html.TextBoxFor(x => x.Amount, new { @class = "form-control", @placeholder = "Nhập số lượng" })
+                        @Html.ValidationMessageFor(x => x.Amount, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="col-3">
+                        <label for="price">Giá</label>
+                        <input type="text" name="demoPrice" id="demoPrice" class="form-control auto" data-a-dec="," data-a-sep=".">
+                        @Html.HiddenFor(x => x.Price, new { @placeholder = "giá" })
+                        @Html.ValidationMessageFor(x => x.Qty, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="card-footer">
+            Footer
+        </div>
+
+        <!-- /.card-footer-->
+    }
+</div>
+
+<!-- /.card -->
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('.auto').autoNumeric('init');
+            $('#demoPrice').bind('blur focusout keypress keyup', function () {
+                var demoGet = $('#demoPrice').autoNumeric('get');
+                $('#Price').val(demoGet);
+                $('#Price').autoNumeric('set', demoGet);
+            });
+            $('#demoPriceSale').bind('blur focusout keypress keyup', function () {
+                var demoGet = $('#demoPriceSale').autoNumeric('get');
+                $('#Price_Sale').val(demoGet);
+                $('#Price_Sale').autoNumeric('set', demoGet);
+            });
+            CKEDITOR.replace('txtDetail', {
+                customConfig: '/content/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+        });
+        function BrowseServer(field) {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                document.getElementById(field).value = fileUrl;
+            };
+            finder.popup();
+        }
+    </script>
+}

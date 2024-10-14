@@ -1,0 +1,137 @@
+﻿@*@model IEnumerable<WebCSharp.Models.EntityFrameWork.Menu>*@
+@model WebCSharp.Models.EntityFrameWork.Order
+
+@{
+    ViewBag.Title = "Chi tiết bài viết";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Thông tin đơn hàng</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/order">Đơn hàng</a></li>
+                        <li class="breadcrumb-item active">@ViewBag.Title</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+}
+<section class="content">
+    @Html.HiddenFor(x => x.Id)
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Chi tiết Menu</h3>
+
+            <div class="card-tools">
+                <a href="/admin/order" class="btn bg-success"><i class="fa fa-arrow-left"></i> Quay lại </a>
+            </div>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+
+
+            <div class="card-body">
+                <table class="table table-bordered border-success table-hover ">
+                    <thead class="bg-green">
+                        <tr class="fs-1">
+                            <th width="30%">
+                                Tên trường
+                            </th>
+                            <th>
+                                Giá trị
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+
+                        <tr>
+                            <th>Id</th>
+                            <td>@Model.Id</td>
+
+
+                        </tr>
+
+
+                        <tr>
+                            <th>Tên</th>
+                            <td>@Model.Name</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>@Model.Email</td>
+                        </tr>
+
+                        <tr>
+                            <th>Phone</th>
+                            <td>@Model.Phone</td>
+                        </tr>
+
+                        <tr>
+                            <th>Address</th>
+                            <td>@Model.Address</td>
+                        </tr>
+                        <tr>
+                            <th>Note</th>
+                            <td>@Model.Note</td>
+                        </tr>
+                        <tr>
+                            <th>UserId</th>
+                            <td>@Model.UserId</td>
+                        </tr>
+                        <tr>
+                            <th>Create_at</th>
+                            <td>@Model.Create_at</td>
+                        </tr>
+                        <tr>
+                            <th>Create_By</th>
+                            <td>@Model.Create_By</td>
+                        </tr>
+                        <tr>
+                            <th>Update_at</th>
+                            <td>@Model.Update_at</td>
+                        </tr>
+                        <tr>
+                            <th>Update_By</th>
+                            <td>@Model.Update_By</td>
+                        </tr>
+                        <tr>
+                            <th>Trạng thái</th>
+                            <td>@Model.Status</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            @*</div>*@
+            <!-- /.card-body -->
+            <div class="card-footer">
+                Footer
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+    </div>
+</section>
+<!-- /.card -->
